@@ -1,3 +1,6 @@
+
+function runInWorker(cmd)
+{
 var w= new Worker("js/worker.js");
 w.onmessage = function(event){
 	var r = document.getElementById("result");
@@ -8,3 +11,4 @@ w.onmessage = function(event){
 	r.innerHTML = ''+dm;
 };
 w.postMessage(" ( 'message returned: ' + ( 1 + 1.02 ) ) ");
+}
