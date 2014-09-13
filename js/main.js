@@ -1,4 +1,4 @@
-
+try{console.log("Entered main.js");}catch(e){}
 function runInWorker(cmd)
 {
 	var w= new Worker("js/worker.js");
@@ -12,3 +12,9 @@ function runInWorker(cmd)
 	};
 	w.postMessage(" ( 'message returned: ' + ( 1 + 1.02 ) ) ");
 }
+
+
+
+
+
+try{console.log("Exited main.js");}catch(e){}
