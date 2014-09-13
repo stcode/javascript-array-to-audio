@@ -16,3 +16,4 @@
 	color:blue;
 	font-size:12px;font-family:arial;
 }
+.block *{margin:.1em;padding:.1em;}

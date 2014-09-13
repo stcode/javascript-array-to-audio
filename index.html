@@ -30,8 +30,9 @@
 			value="get long wav urls for percent values for rc servos..." />
 	</div>
 	<div class="block">
-
-		<textarea style="height: 12px;" class="datata w100 h20 pmfb blu br1"></textarea>
+		<input id="cmdin"/>
+		<button type="button" onclick="runInWorker(jQuery('#cmdin').val());"></button>
+		<textarea  class="datata w100 h20 pmfb blu br1"></textarea>
 	</div>
 
 </body>
