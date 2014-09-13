@@ -5,10 +5,10 @@
 <title>STCode ArrayToWav</title>
 
 <script>
-var pwmServoControl={};
-pwmServoControl.loadPWMData=function(){document.getElementById('frequency').setAttribute('disabled','false');document.getElementById('frequency').setAttribute('disabled','false');};
-pwmServoControl.dataToWav=function(var data){document.getElementById('dutycycle').setAttribute('disabled','false');};
-pwmServoControl.playDataUrl=function(var dataurl){
+//var pwmServoControl={};
+/*pwmServoControl.*/function loadPWMData(){document.getElementById('frequency').setAttribute('disabled','false');document.getElementById('frequency').setAttribute('disabled','false');};
+/*pwmServoControl.*/function dataToWav(var data){document.getElementById('dutycycle').setAttribute('disabled','false');};
+/*pwmServoControl.*/function playDataUrl=function(var dataurl){
 	var aa = document.getElementsByTagName('audio');
 	for(var i=0;i<aa.length;i++){aa[i].remove();} 
 	document.body.appendChild(document.createElement('audio'));
@@ -26,7 +26,7 @@ pwmServoControl.playDataUrl=function(var dataurl){
 <body>
 
 	<input class="pfmb blu" type="button"
-		onclick="pwmServoControl.loadPWMData();"
+		onclick="/*pwmServoControl.*/loadPWMData();"
 		value="1. Load PWM Data" />
 
 	<input disabled="disabled" class="pfmb blu" type="button"
