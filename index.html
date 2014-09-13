@@ -8,7 +8,7 @@
 //var pwmServoControl={};
 /*pwmServoControl.*/function loadPWMData(){document.getElementById('frequency').setAttribute('disabled','false');document.getElementById('frequency').setAttribute('disabled','false');};
 /*pwmServoControl.*/function dataToWav(var data){document.getElementById('dutycycle').setAttribute('disabled','false');};
-/*pwmServoControl.*/function playDataUrl=function(var dataurl){
+/*pwmServoControl.*/function playDataUrl=function(dataurl){
 	var aa = document.getElementsByTagName('audio');
 	for(var i=0;i<aa.length;i++){aa[i].remove();} 
 	document.body.appendChild(document.createElement('audio'));
