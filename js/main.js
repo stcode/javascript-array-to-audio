@@ -5,6 +5,6 @@ w.onmessage = function(event){
     var dm = event || {};
     dm=dm.data || {};
     dm=dm.message || '';
-    
 	r.innerHTML = ''+dm;
 };
+w.postMessage(" ( 'message returned: ' + ( 1 + 1.02 ) ) ");
