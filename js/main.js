@@ -1,4 +1,4 @@
-var w= new Worker("worker.js");
+var w= new Worker("js/worker.js");
 w.onmessage = function(event){
 	var r = document.getElementById("result");
 	if(r){}else{r=document.createElement('div');r.setAttribute('id','result');document.appendChild(r);}
