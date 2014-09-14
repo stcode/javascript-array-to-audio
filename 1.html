@@ -1,0 +1,10 @@
+<html>
+<head></head>
+<body>
+<div class="block">delay: <input id="msdelay" type="number" value="1000" step="1" min="1"/>ms</div>
+<img src="https://192.168.1.7/image.jpg" id="img1" style="width:95%;border:1px solid gold;" 
+  onload="setTimeout(function(){document.getElementById('img1').src='https://192.168.1.7/image.jpg?ts='+(new Date()).getTime();},Number(document.getElementById('msdelay').value));"
+  onerror="setTimeout(function(){document.getElementById('img1').src='https://192.168.1.7/image.jpg?ts='+(new Date()).getTime();},Number(document.getElementById('msdelay').value));"
+/>
+</body>
+</html>
