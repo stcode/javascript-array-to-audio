@@ -18,7 +18,7 @@
 	</div>
 	<div class="block">
 		<input class="pfmb blu" type="button"
-			onclick="$('.datata').html(window.getWavUrlsFromDataArrays(JSON.parse($('.data').html())));"
+			onclick="$('.datata').html(JSON.stringify(window.getWavUrlsFromDataArrays(JSON.parse($('.data').html()))));"
 			value="2. convert to wav: " /> frequency (Hz):<input type="number"
 			id="frequency" min="1e-12" value="44100" /> Duty Cycle (0.0-1.0<em>
 			or .10-.20 for servo</em>):<input type="number" id="dutycycle" min="0"
