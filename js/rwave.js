@@ -131,3 +131,81 @@ window.RIFFWAVE = function(data) {
 }; // end RIFFWAVE
 
 
+///////////////////////////////
+
+
+
+
+window.log=function(s){var d = jQuery('.d0');d.text(d.text()+'\n- - - \n');};
+
+window.getwav=function()
+{
+    var log=function(s){var d = jQuery('.d0');d.text(d.text()+'\n- - - \n');};
+    
+    log('entered getwav...');
+    
+//var audio = new Audio(); // create the HTML5 audio element
+window.wave = new window.RIFFWAVE(); // create an empty wave file
+
+
+        $('.d1').text('made data.');
+//alert('datalen='+data.length);
+window.wave.header.sampleRate = 44100; // set sample rate to 44KHz
+window.wave.header.numChannels = 2; // two channels (stereo)
+
+window.wave.Make(window.data);
+        $('.d1').text('ran make...');
+    
+$('#ta1').text('uri is null');
+    if(window.wave.dataURI){$('#ta1').text(window.wave.dataURI);}
+ // make the wave file
+//audio.src = wave.dataURI; // set audio source
+//audio.play(); // we should hear two tones one on each speaker
+
+    (function(s){var d = jQuery('.d0');d.text(d.text()+'\n- - - \n');})('exited onload...');
+    
+};
+
+//
+
+window.getWavUrlFromData=function(datain)
+{
+    if(typeof(datain)=='string'){datain=JSON.parse(datain);}
+    var log=function(s){var d = jQuery('.d0');d.text(d.text()+'\n- - - \n');};
+    
+    log('entered getwav...');
+    
+//var audio = new Audio(); // create the HTML5 audio element
+var wave1 = new window.RIFFWAVE(); // create an empty wave file
+
+
+wave1.header.sampleRate = 44100; // set sample rate to 44KHz
+wave1.header.numChannels = 2; // two channels (stereo)
+
+wave1.Make(datain);
+$('.d1').text('ran make... '+new Date());
+    
+//$('#ta1').text('uri is null');
+ //   if(window.wave.dataURI){$('#ta1').text(window.wave.dataURI);}
+ // make the wave file
+//audio.src = wave.dataURI; // set audio source
+//audio.play(); // we should hear two tones one on each speaker
+
+    (function(s){var d = jQuery('.d0');d.text(d.text()+'\n- - - \n');})('exited getWavUrlFromdata - '+new Date());
+    return wave1.dataURI+'';
+};
+/// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// ///    
+//    alert('w='+window.evalScriptsToRun);
+window.getWavUrlsFromDataArrays=function(daa)
+{
+    if(daa){}else{daa=window.controlArrays;}
+    var wavurls=new Array();
+    var i=0;
+    for(i=0;i<daa.length;i++)
+    {
+        var da = daa[i];
+        var wu = window.getWavUrlFromData(da);
+        wavurls.push(wu);
+    }
+    return wavurls;
+}
