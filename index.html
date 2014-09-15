@@ -14,11 +14,11 @@
 
 	<div class="block">
 		<input class="pfmb blu" type="button"
-			onclick="$('.data').html(JSON.stringify(waveforms.wf10));" value="1. Load PWM Data" /> or enter it here: <textarea class="blu data"></textarea>
+			onclick="$('.data').html(JSON.stringify([waveforms.wf10,waveforms.wf14,waveforms.wf15,waveforms.wf16,waveforms.wf20]));" value="1. Load PWM Data" /> or enter it here: <textarea class="blu data"></textarea>
 	</div>
 	<div class="block">
 		<input disabled="disabled" class="pfmb blu" type="button"
-			onclick="window.d=(window.getWavUrlsFromDataArrays(window.largeControlArrays));window.formatu();"
+			onclick="$('.datata').html(window.getWavUrlsFromDataArrays(JSON.parse($('.data').html())));"
 			value="2. convert to wav: " /> frequency (Hz):<input type="number"
 			id="frequency" min="1e-12" value="44100" /> Duty Cycle (0.0-1.0<em>
 			or .10-.20 for servo</em>):<input type="number" id="dutycycle" min="0"
