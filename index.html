@@ -26,12 +26,14 @@
 	</div>
 	
 	<div class="block">
-		
+		<input type="button" value="audio reset all" onclick="audioResetAll()"/>
 		<button type="button" onclick="appendAudio()">append audio</button>
 		<textarea  class="datata w100 h20 pmfb blu br1"></textarea>
 	</div>
 	<div class="block blockn"></div>
 	<script>
+	function audioReset(e){          var a0=e || $('audio')[0];a0.volume=0.0;a0.currentTime=0.0;a0.play();a0.volume=1.0;                 }    
+	function audioResetAll(){$('audio').each(function(i,e){audioReset(e);});}
 		function appendAudio(){
 		setTimeout(function(){var r="";$(JSON.parse($('.datata').html())).each(function(i,e){r+='<audio class="audioctl audio_'+i+'" src="'+e+'" controls="true"></audio>\n';});    $('.blockn').html(r);    return r;},1000);
 		}
