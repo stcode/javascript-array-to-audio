@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head><title>0gas.us</title></head>
+<body>
+<h1>0gas.us</h1>
+<div class="body-main">
+
+<pre id="log" style="background:red;">Log:</pre>
+<script>
+  var worker = new SharedWorker('js/worker.js');
+  var log = document.getElementById('log');
+  worker.port.addEventListener('message', function(e) {
+    log.textContent += '\n---\n' + e.data;
+  }, false);
+  worker.port.start(); // note: need this when using addEventListener
+  worker.port.postMessage("getPort");
+  var pingWorker=function(){worker.port.postMessage(document.getElementById('in1').value);};
+</script>
+Command: <input id="in1" size="50"/><br/>
+<input type="button" onclick="pingWorker();" value="eval in thread"/>
+
+</div>
+</body>
+</html>
+
