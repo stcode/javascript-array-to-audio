@@ -24,18 +24,19 @@
 			or .10-.20 for servo</em>):<input type="number" id="dutycycle" min="0"
 			value=".15" />
 	</div>
+	
 	<div class="block">
-
-		<input class="pfmb blu" type="button"
-			onclick="window.d=(window.getWavUrlsFromDataArrays(window.largeControlArrays));window.formatu();"
-			value="get long wav urls for percent values for rc servos..." />
-	</div>
-	<div class="block">
-		<input id="cmdin"/>
-		<button type="button" onclick="runInWorker(jQuery('#cmdin').val());"></button>
+		
+		<button type="button" onclick="appendAudio()">append audio</button>
 		<textarea  class="datata w100 h20 pmfb blu br1"></textarea>
 	</div>
-
+	<div class="block blockn"></div>
+	<script>
+		function appendAudio(){
+		setTimeout(function(){var r="";$(JSON.parse($('.datata').html())).each(function(i,e){r+='<audio class="audioctl audio_'+i+'" src="'+e+'" controls="true"></audio>\n';});    $('.blockn').html(r);    return r;},1000);
+		}
+		
+	</script>
 </body>
 </html>
 get_servo_pwm_period_array
