@@ -6,12 +6,26 @@
 <link href="css/styles.css" media="all" rel="stylesheet" type="text/css" />
 <script src="js/jquery.js"></script>
 <script src="js/underscore.js"></script>
+<script>
+	window.aaloaded = function(aa)
+	{
+		var jqaa=$(aa);
+		var rw = $('<div class="rw"/>');
+		jqaa.each(function(i,e){
+			var a1 = $('<a target="_blank" class="re re_'+i+'"/>');
+			a1.attr('href',e);
+			rw.append(a1);
+		});
+		$('body').append(rw);
+		return rw;
+	};
+</script>
 </head>
 <body>
 
 	<div class="block block0"></div>
 	
-	
+	<input type="button" value="get links" onclick="$.getScript('./tc.js');" />
 	
 	
 
