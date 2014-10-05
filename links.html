@@ -15,7 +15,7 @@
 			var a1 = $('<a target="_blank" class="re re_'+i+'"/>');
 			a1.attr('href',e);
 			a1.text('RE:'+i);
-			rw.append(a1);
+			rw.append($('<div/>').append(a1));
 		});
 		$('body').append(rw);
 		return rw;
